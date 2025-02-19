@@ -1,0 +1,548 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg,rgb(127, 94, 127) 51, 198, #e7145a, #1c1a1a); /* New Gradient */
+    /* background-size: 600% 600%; */
+    animation: gradientBackground 15s ease infinite;
+    color: #f21f1f;
+    overflow-x: hidden;
+    height: 100vh;
+    font-size: 16px;
+     color: red;
+}
+
+/* Navbar Styling */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(230, 52, 52, 0.2); /* Slightly lighter transparent navbar */
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+nav .profile {
+    display: flex;
+    align-items: center;
+}
+
+nav .profile img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+nav h1 {
+    font-size: 2rem;
+    color: #cd4d4d;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav .menu {
+    display: flex;
+    gap: 30px;
+}
+
+nav .menu a {
+    color: #f71313;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+nav .menu a:hover {
+    background-color: rgba(173, 69, 69, 0.3);
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* About Me Section */
+#about-me {
+    padding: 120px 30px;
+    text-align: center;
+    margin-top: 70px;
+    animation: fadeIn 2s ease-out;
+    background-color: #6c4e56;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.bio-container {
+    width: 55%;
+    text-align: left;
+    animation: fadeInText 2s ease-in-out;
+}
+
+.photo-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(90, 28, 28, 0.4);
+    animation: photoAnimation 4s ease-in-out infinite;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Animation for Photo */
+@keyframes photoAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Text Fade-in Animation */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animated Gradient Background */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Star Effect Background */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background-color: #d25454;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Animation for Welcome Text */
+.animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: welcomeTextColorChange 5s ease-in-out infinite;
+}
+
+.welcome-text {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #6c1e56; /* Lighter Pink */
+    text-shadow: 0 0 15px rgba(143, 65, 121, 0.8);
+}
+
+/* Color Change Animation for Welcome Text */
+@keyframes welcomeTextColorChange {
+    0% {
+        color: #b44093;
+    }
+    50% {
+        color: #E195AB;
+    }
+    100% {
+        color: #DE3163;
+    }
+}
+
+/* Skills Section */
+#skills {
+    padding: 120px 30px;
+    text-align: center;
+    margin-top: 70px;
+    animation: fadeIn 2s ease-out;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    animation: slideUp 1s ease-out;
+}
+
+/* Skill Card */
+.skill-card {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.skill-card:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.skill-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    animation: rotateAnimation 3s infinite linear;
+}
+
+@keyframes rotateAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Text Animation for Skill Cards */
+.skill-card h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+/* Fade-in Effect for Skills */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Projects Section */
+#projects {
+    padding: 120px 30px;
+    text-align: center;
+    margin-top: 70px;
+    animation: fadeIn 2s ease-out;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+/* Projects Container */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Project Card */
+.project-card {
+    width: 260px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.project-card:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Project Info Styling */
+.project-info h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Project Link Styling */
+.project-link a {
+    font-size: 1.1rem;
+    color: #DE3163; /* Vibrant Pink */
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 2px solid #DE3163;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-link a:hover {
+    background-color: #DE3163;
+    color: #fff;
+}
+
+/* Additional Animations for Text */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Additional Animations for Text */
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+/* Card Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in Animation for Section */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* College Section */
+#college {
+    padding: 100px 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    color: #fff;
+    text-align: center;
+    margin-top: 70px;
+    animation: fadeInUp 2s ease-out;
+}
+
+/* College Container */
+.college-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* College Image Container */
+.college-image-container {
+    width: 50%;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    animation: imageAnimation 3s ease-in-out infinite;
+}
+
+.college-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* College Information Container */
+.college-info-container {
+    width: 45%;
+    text-align: left;
+    animation: fadeInText 2s ease-in-out;
+}
+
+.college-info-container h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.college-info-container p {
+    font-size: 1.2rem;
+    color: #ddd;
+    line-height: 1.5;
+}
+
+/* Map Section */
+.college-map-container {
+    margin-top: 50px;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+.college-map-container h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.map-animation {
+    position: relative;
+    animation: fadeInMap 2s ease-out;
+}
+
+/* Image Animation */
+@keyframes imageAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Text Fade-in Animation for College Info */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade-in Animation for Map */
+@keyframes fadeInMap {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in Animation for Section */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
